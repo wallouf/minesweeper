@@ -8,6 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello Worldd!" );
+        String mineField = "*...\n..*.\n....";
+        MineSweeperImpl mineSweeper = new MineSweeperImpl();
+        mineSweeper.setMineField( 3, 4, mineField );
+        System.out.println( mineSweeper.toString() );
+        System.out.println( mineSweeper.getHintField() );
     }
 }
