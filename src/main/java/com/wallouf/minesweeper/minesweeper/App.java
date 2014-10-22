@@ -6,6 +6,11 @@ package com.wallouf.minesweeper.minesweeper;
  */
 public class App
 {
+    /**
+     * Test basic case asked
+     * 
+     * @param args
+     */
     public static void main( String[] args )
     {
         String mineField = "*...\n..*.\n....";

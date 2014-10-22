@@ -20,6 +20,20 @@ public class MineSweeperImpl implements MineSweeper {
         return M;
     }
 
+    /**
+     * Initialises the mine-field
+     *
+     *
+     * @param N
+     *            number of rows in the field
+     * @param M
+     *            number of columns in the field
+     * @param mineField
+     *            string containing the mines (see interface javadoc for
+     *            representation)
+     * @throws IllegalArgumentException
+     *             if any of the arguments is invalid or have invalid format
+     */
     public void setMineField( int N, int M, String mineField ) throws IllegalArgumentException {
         // TODO Auto-generated method stub
         String[] a_mineFieldList = mineField.trim().split( "\\n" );
@@ -38,6 +52,15 @@ public class MineSweeperImpl implements MineSweeper {
         a_mineMap = a_mineFieldMap;
     }
 
+    /**
+     * Produces a hint-field for the current mine-filed (see interface javadoc
+     * for details)
+     *
+     * @return a string representation of the hint-field
+     * @throws IllegalStateException
+     *             if the mine-field has not been initialised (i.e.
+     *             setMineField() has not been called)
+     */
     public String getHintField() throws IllegalStateException {
         // TODO Auto-generated method stub
         if ( a_mineMap != null && a_mineMap.length > 0 ) {
@@ -93,6 +116,9 @@ public class MineSweeperImpl implements MineSweeper {
         }
     }
 
+    /**
+     * Display mine map
+     */
     public String toString() {
         if ( a_mineMap != null && a_mineMap.length > 0 ) {
             String result = "";
