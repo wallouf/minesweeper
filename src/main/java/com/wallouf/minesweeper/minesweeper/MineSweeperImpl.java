@@ -108,7 +108,9 @@ public class MineSweeperImpl implements MineSweeper {
                         result += i_minesCount;
                     }
                 }
-                result += "\n";
+                if ( ( i + 1 ) < N ) {
+                    result += "\n";
+                }
             }
             return result;
         } else {
@@ -119,18 +121,20 @@ public class MineSweeperImpl implements MineSweeper {
     /**
      * Display mine map
      */
-    public String toString() {
+    public String toString() throws IllegalStateException {
         if ( a_mineMap != null && a_mineMap.length > 0 ) {
             String result = "";
             for ( int i = 0; i < a_mineMap.length; i++ ) {
                 for ( int j = 1; j < a_mineMap[i].length; j++ ) {
                     result += a_mineMap[i][j];
                 }
-                result += "\n";
+                if ( ( i + 1 ) < N ) {
+                    result += "\n";
+                }
             }
             return result;
         } else {
-            return "You must defined a map before!";
+            throw new IllegalStateException( "You must defined a map before!" );
         }
     }
 }
